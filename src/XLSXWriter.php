@@ -169,7 +169,7 @@ class XLSXWriter
         return $cell_style_idx;
     }
 
-    private function initializeColumnTypes($header_types)
+    protected function initializeColumnTypes($header_types)
     {
         $column_types = array();
         foreach ($header_types as $v) {
@@ -652,7 +652,7 @@ class XLSXWriter
         return $first_key;
     }
     //------------------------------------------------------------------
-    private static function determineNumberFormatType($num_format)
+    protected static function determineNumberFormatType($num_format)
     {
         $num_format = preg_replace("/\[(Black|Blue|Cyan|Green|Magenta|Red|White|Yellow)\]/i", "", $num_format);
         if ($num_format == 'GENERAL') {
@@ -703,7 +703,7 @@ class XLSXWriter
     }
 
     //------------------------------------------------------------------
-    private static function numberFormatStandardized($num_format)
+    protected static function numberFormatStandardized($num_format)
     {
         if ($num_format == 'money') {$num_format = 'dollar';}
         if ($num_format == 'number') {$num_format = 'integer';}
